@@ -1,0 +1,124 @@
+
+-------------------------------------------------------------------
+Maximum Loss of gain+Io+s11+iip3=0
+Optimized Point occured at iteration=1
+Optimized Io Loss=241.687m
+
+------------------------- Circuit Parameter Values ----------------------------------------
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Ibias1: 1.305m
+len1: 60.0n
+W1: 127.923µ
+Rb: 251.176
+Rd1: 516.75
+Rbias1: 1.0K
+C1: 31.831p
+C2: 94.374p
+Temp: 27.0
+Rd2: 2.559K
+Ibias2: 377.365µ
+len2: 104.972n
+W2: 12.94µ
+W3: 2.01µ
+Rbias2: 5.392K
+Rbias3: 257.963M
+Rbias4: 14.477K
+C3: 5.845p
+C4: 2.177p
+Cload: 2.248p
+Alo: 212.132m
+frf: 1.01G
+frf_fund2: 1.011G
+mismatch: 0
+
+------------------------- Output Parameter Values ----------------------------------------
+Io1: 912.328µ
+Io2: 296.108µ
+conv_gain_db: 23.326
+lna_gain_db: 13.848
+bb_BW: 35.211M
+s11_db: -12.253
+nf_db: 8.611
+iip3_dbm: -21.181
+gm1: 17.71m
+gds1: 2.456m
+region1: 3.0
+gm2: 3.883m
+gds2: 506.369µ
+region2: 2.0
+
+Time Taken to Run (hh/mm/ss.) = 4:03:04.403208
+
+---------------- MOS Parameters ----------------------------------
+un: 21.206m
+cox: 17.258m
+vt: 415.896m
+Lmin: 60.0n
+vdd: 1.0
+
+--------------------- Optimization Start ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Ibias1: 1.028m
+len1: 60.0n
+W1: 115.298µ
+Rb: 255.427
+Rd1: 316.228
+Rbias1: 1.0K
+C1: 31.831p
+C2: 94.374p
+Temp: 27.0
+Rd2: 1.954K
+Ibias2: 341.25µ
+len2: 60.0n
+W2: 11.202µ
+W3: 1.399µ
+Rbias2: 5.392K
+Rbias3: 257.963M
+Rbias4: 14.477K
+C3: 5.845p
+C4: 2.177p
+Cload: 2.291p
+Alo: 212.132m
+frf: 1.01G
+frf_fund2: 1.011G
+mismatch: 0
+
+---------------- Extracted Parameters ------------------------
+Io1: 833.085µ
+Io2: 265.355µ
+gm1: 16.284m
+gds1: 1.947m
+vth1: 439.17m
+vdsat1: 54.675m
+cgs1: 51.649f
+cgd1: 21.74f
+region1: 3.0
+gm2: 4.088m
+gds2: 565.817µ
+vth2: 420.742m
+vdsat2: 75.698m
+region2: 3.0
+cgs2: 6.26f
+cgd2: 2.072f
+vth3: 469.209m
+cgs3: 286.965o
+cgd3: 284.322o
+Vcmlo: 9.886µ
+vd3: 474.392m
+conv_gain_db: 21.684
+gain_freq: 0
+bb_BW: 11.646M
+lna_gain_db: 11.916
+lna_gain_freq: 1.0G
+s11_db: -15.237
+s11_rad: -958.154m
+nf_db: 10.36
+nf_spot_db: 9.528
+nf_spot_freq: 10.0M
+iip3_dbm: -13.036
