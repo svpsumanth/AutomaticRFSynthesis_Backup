@@ -1,0 +1,188 @@
+
+-------------------------------------------------------------------
+Maximum Loss of gain+Io+s11+iip3=0
+Optimized Point occured at iteration=400
+Optimized Io Loss=94.675m
+
+------------------------- Circuit Parameter Values ----------------------------------------
+Rd: 929.853
+Ibias: 980.521µ
+W1: 212.492µ
+W2: 93.25µ
+Rbias1: 12.723K
+Rbias2: 263.676
+Rbias3: 149.661
+C1: 2.477p
+C2: 2.465p
+Cload: 18.71p
+Alo: 310.967m
+flo: 1.0G
+frf: 1.01G
+mismatch: 0
+Temp: 27.0
+
+------------------------- Output Parameter Values ----------------------------------------
+Io: 473.375µ
+conv_gain_db: 15.045
+iip3_dbm: 1.567
+iip2_dbm: 58.609
+nf_db: 14.972
+p_src: 6.766m
+gm1: 9.97m
+vdsat1: 50.331m
+vg1: 314.264m
+vd1: 82.84m
+bb_BW: 9.999M
+gm2: 5.061m
+gds1: 2.301m
+region: 3.0
+
+Time Taken to Run (hh/mm/ss.) = 12:04:20.857993
+
+---------------- MOS Parameters ----------------------------------
+un: 21.206m
+cox: 17.258m
+vt: 431.132m
+Lmin: 60.0n
+vdd: 1.0
+
+--------------------- Automatic Hand Calculations ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+Rd: 450.962
+Ibias: 1.586m
+W1: 19.827µ
+W2: 23.118µ
+Rbias1: 11.513K
+Rbias2: 17.766K
+Rbias3: 22.23K
+C1: 2.737p
+C2: 3.192p
+Cload: 35.292p
+Alo: 34.207m
+flo: 1.0G
+frf: 1.01G
+mismatch: 0
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+Voutp: 585.249m
+Voutn: 585.249m
+vg1: 484.117m
+vd1: 152.445m
+i_src: 3.476m
+v_src: 1.0
+p_src: 3.476m
+Io: 919.71µ
+gm1: 10.333m
+gds1: 2.494m
+vt: 431.132m
+vdsat1: 97.586m
+cgs1: 12.385f
+cgd1: 3.67f
+cgs2: 12.323f
+cgd2: 4.261f
+region: 2.0
+Vcmlo: 555.75m
+gm2: 7.546m
+vt2: 432.889m
+conv_gain_db: -6.76
+gain_freq: 1.0K
+bb_BW: 9.999M
+iip2_dbm: 55.471
+nf_db: 38.594
+iip3_dbm: 3.211
+
+--------------------- Hand Calculations Update ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+Rd: 338.85
+Ibias: 1.967m
+W1: 26.718µ
+W2: 23.589µ
+Rbias1: 12.723K
+Rbias2: 23.009K
+Rbias3: 28.783K
+C1: 2.477p
+C2: 2.465p
+Cload: 38.642p
+Alo: 212.132m
+flo: 1.0G
+frf: 1.01G
+mismatch: 0
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+Voutp: 619.6m
+Voutn: 619.6m
+vg1: 476.717m
+vd1: 146.86m
+i_src: 4.251m
+v_src: 1.0
+p_src: 4.251m
+Io: 1.123m
+gm1: 13.139m
+gds1: 3.162m
+vt: 431.332m
+vdsat1: 94.92m
+cgs1: 16.511f
+cgd1: 4.963f
+cgs2: 12.853f
+cgd2: 4.322f
+region: 2.0
+Vcmlo: 555.665m
+gm2: 8.829m
+vt2: 428.999m
+conv_gain_db: 6.759
+gain_freq: 1.0K
+bb_BW: 9.999M
+iip2_dbm: 67.573
+nf_db: 19.701
+iip3_dbm: 6.0
+
+--------------------- Optimization Start ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+Rd: 338.85
+Ibias: 1.967m
+W1: 26.718µ
+W2: 23.589µ
+Rbias1: 12.723K
+Rbias2: 23.009K
+Rbias3: 28.783K
+C1: 2.477p
+C2: 2.465p
+Cload: 38.642p
+Alo: 212.132m
+flo: 1.0G
+frf: 1.01G
+mismatch: 0
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+Voutp: 619.6m
+Voutn: 619.6m
+vg1: 476.717m
+vd1: 146.86m
+i_src: 4.251m
+v_src: 1.0
+p_src: 4.251m
+Io: 1.123m
+gm1: 13.139m
+gds1: 3.162m
+vt: 431.332m
+vdsat1: 94.92m
+cgs1: 16.511f
+cgd1: 4.963f
+cgs2: 12.853f
+cgd2: 4.322f
+region: 2.0
+Vcmlo: 555.665m
+gm2: 8.829m
+vt2: 428.999m
+conv_gain_db: 6.759
+gain_freq: 1.0K
+bb_BW: 9.999M
+iip2_dbm: 67.573
+nf_db: 19.701
+iip3_dbm: 6.0
