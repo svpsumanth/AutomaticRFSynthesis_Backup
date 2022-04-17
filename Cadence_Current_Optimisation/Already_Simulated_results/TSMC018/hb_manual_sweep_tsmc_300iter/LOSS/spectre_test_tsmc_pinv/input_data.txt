@@ -1,0 +1,90 @@
+
+
+---------------------- Filenames -----------------------
+MOSFET File   :/home/ee18b028/cadence_project/tsmc018.scs
+Directory     :/home/ee18b064/cadence_project/CGA_LNA_autogen/
+IIP3 Method   :hb_manual_sweep
+TCSH          :/home/ee18b064/Optimization/Cadence_Current_Optimisation/spectre_run.tcsh
+Spectre Run   :tcsh /home/ee18b064/Optimization/Cadence_Current_Optimisation/spectre_run.tcsh
+
+---------------------- Output Conditions -----------------------
+s11_db: -15.0
+iip3_dbm: -5.0
+gain_db: 10.0
+nf_db: 4.0
+wo: 6283185307.179586
+delta_v: 100 m
+Rs: 50.0
+
+---------------------- Simulation Conditions -----------------------
+pin_iip3: -60.0
+f_delta_iip3: 1000000
+
+---------------------- circuit_parameters_list -----------------------
+Rb, Rd, Io, C1, C2, W, Rbias, fo, Temp, 
+
+---------------------- output_parameters_list -----------------------
+Io, gain_db, iip3_dbm, s11_db, nf_db, p_source, gm1, vdsat, vg, vd, vs, 
+
+---------------------- MOS Parameters -----------------------
+MOS Type :NMOS
+Vdd      :1.8
+Lmin     :1.8e-07
+
+---------------------- Manual Circuit Parameters -----------------------
+Rb: 292
+Rd: 1230
+Io: 384 u
+C1: 318 p
+C2: 1.19 n
+W: 375 u
+Rbias: 13.3
+fo: 1000000000.0
+Temp: 27.0
+
+---------------------- Pre Optimization -----------------------
+Step1b_Limit :5
+Step2_Limit  :5
+vdsat_reqd      :0.09
+Pre_Opt_Type	   :1
+gmrs_threshold  :0.2
+vdsat_threshold :0.02
+C1_threshold    :100
+C1_threshold    :100
+Rbias_threshold :100
+
+---------------------- Loss Weights -----------------------
+gain_db: 100 m
+iip3_dbm: 200 m
+s11_db: 66.6 m
+nf_db: 250 m
+Io: 1000
+
+---------------------- Alpha Parameters -----------------------
+alpha: 200 m
+Rb: 1.0
+Rd: 1.0
+W: 1.0
+Io: 1.0
+Alpha Type  :Normal
+Alpha Start :0.8
+Alpha End   :0.05
+
+---------------------- Optimization Parameters -----------------------
+Max Iterations :300
+Alpha Min      :-1
+Consec Iter    :-1
+Alpha Mult      :1
+Delta Threshold :0.001
+Loss Type       :1
+Update Check    :0
+Optimization Name :loss1
+Optimization Type :0
+Optimization Parameters : Rb ,Rd ,Io ,W ,
+
+------------- Note ------------------
+Loss Type is 1 for normal gradient descent
+Loss Type is 0 for gradient descent with slope of Io is only considered when other losses are 0 and Io slope is ignored otherwise
+
+Update Check is 1 if we want to perform next iteration with the a previous result having the smaller loss
+Update Check is 0 fif we will perform next iteration with present circuit parameters
