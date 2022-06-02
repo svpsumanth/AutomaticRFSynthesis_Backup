@@ -8,9 +8,14 @@ Optimization Algorithm:
 #===========================================================================================================================
 import numpy as np
 import math
+import os
+import time
+import datetime
 import common_functions as cf
 import spectre as sp
 import optimization_functions_loss as ofl
+import multiprocessing
+import fileinput
 #import optimization_functions_fom as off
 
 #===========================================================================================================================
@@ -18,7 +23,7 @@ import optimization_functions_loss as ofl
 
 	
 #-----------------------------------------------------------------------------------------------
-# This function updates the values of circuit parameters by trying to minimize loss
+# This function calculates the gradient 
 def calc_loss_slope(output_conditions,circuit_parameters,loss_dict,extracted_parameters,optimization_input_parameters):
 
 	loss_weights=optimization_input_parameters['loss_weights']
@@ -200,6 +205,159 @@ def moving_avg(loss_iter,circuit_parameters_iter,average_parameters,i,n_points):
 		
 	return average_parameters
 
+#----------------------------------------------------------------------------------------------------------------
+# Command that returns the string that has to be printed in the .cir file
+def print_param(param_var,val):
+	return "parameters "+param_var+'='+str(val)+'\n'
+
+
+def scs_file_generate(circuit_parameters,optimization_input_parameters,main_file_path,out_file_dir):
+	
+	param_list=optimization_input_parameters['optimizing_parameters']
+
+	cir_dict={}
+	for cir_param in optimization_input_parameters['cir_writing_dict']:
+		cir_dict[optimization_input_parameters['cir_writing_dict'][cir_param]]=cir_param
+	
+
+
+	'''f=open(main_file_path)
+	lines=f.readlines()
+	f.close()
+	
+	s=''
+	for line in lines:
+		s=s+line'''
+
+	increment_factor=optimization_input_parameters['delta_threshold'] #parameter increases by increment_factor*parameter
+	
+	for param in param_list:
+		s=''
+		file_dir=out_file_dir+'slope_'+param+'/'
+		out_file_path=file_dir+'circ.scs'
+
+		if not os.path.exists(file_dir):
+			os.makedirs(file_dir)
+		
+				
+		write_dict=sp.dict_convert(circuit_parameters,optimization_input_parameters)
+		circuit_parameters[param]=circuit_parameters[param]*(1+increment_factor)
+		for line in fileinput.input(main_file_path):
+			if "parameters "+cir_dict[param]+'=' in line:
+				line=line.replace(line,print_param(cir_dict[param],circuit_parameters[param]))
+			s=s+line
+	
+		f_out=open(out_file_path,'w')
+		f_out.write(s)
+		f_out.close()
+
+
+#-----------------------------------------------------------------------------------------------
+def tcsh_file_generate(param_list,out_file_dir):
+
+	for param in param_list:
+		out_file_path=out_file_dir+'tcsh_run_'+param+'.tcsh'
+
+		if not os.path.exists(out_file_dir):
+			os.makedirs(out_file_dir)
+	
+		s=''
+	
+		s='#tcsh\n'
+		s=s+'source ~/.cshrc\n'
+		s=s+'cd '+out_file_dir+'slope_'+param+'\n'
+		s=s+'spectre circ.scs =log display.log\n'
+		s=s+'exit'
+
+		f_out=open(out_file_path,'w')
+		f_out.write(s)
+		f_out.close()
+
+
+#-----------------------------------------------------------------------------------------------
+def run_specific_file(spectre_run_command):
+	#os.system(file_dir)
+	os.system(spectre_run_command)
+
+def run_files_parallel(param_list,out_file_dir):
+	
+	args=[]
+
+	for param in param_list:
+		args.append('tcsh '+out_file_dir+'tcsh_run_'+param+'.tcsh')
+
+	
+	pool = multiprocessing.Pool()
+	
+	outputs = pool.map(run_specific_file, args)
+	pool.close()
+	pool.join()
+
+#-----------------------------------------------------------------------------------------------
+# This function updates the values of circuit parameters by trying to minimize loss
+def calc_loss_slope_parallel(output_conditions,circuit_parameters,loss_dict,extracted_parameters,optimization_input_parameters):
+
+	loss_weights=optimization_input_parameters['loss_weights']
+	delta_threshold=optimization_input_parameters['delta_threshold']
+	
+	# Getting the sensitivity dictionary
+	circuit_parameters_sensitivity={}
+	for param_name in optimization_input_parameters['optimizing_parameters']:
+		circuit_parameters_sensitivity[param_name]=0
+	
+	# Creating new dictionaries
+	circuit_parameters1=circuit_parameters.copy() #store the values of parameters after increment to calculate the slope
+	extracted_parameters1=extracted_parameters.copy() # store the values of parameters after increment to calculate the slope
+	circuit_parameters_slope={} # Tstore the values of slope of different losses with change of all circuit parameters
+
+
+	
+	main_file_path=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.scs'
+	out_file_dir=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/slope_duplicates/'
+
+	scs_file_generate(circuit_parameters1.copy(),optimization_input_parameters,main_file_path,out_file_dir)
+	tcsh_file_generate(optimization_input_parameters['optimizing_parameters'],out_file_dir)
+	run_files_parallel(optimization_input_parameters['optimizing_parameters'],out_file_dir)
+
+	# Calculating the value to update each parameter with
+	for param_name in optimization_input_parameters['optimizing_parameters']:
+		
+		# Calculating the increment value
+		increment_factor=delta_threshold # The value by which parameter increases = increment_factor*parameter
+		increment=circuit_parameters[param_name]*increment_factor
+	
+	
+		# Incrementing the circuit parameter
+		circuit_parameters1=circuit_parameters.copy()
+		circuit_parameters1[param_name]=circuit_parameters1[param_name]+increment
+		
+		
+		# Extracting Loss
+		#extracted_parameters1=sp.write_extract(circuit_parameters1,optimization_input_parameters)
+		extracted_parameters1=sp.extract_output_param(optimization_input_parameters,out_file_dir+'slope_'+param_name)
+		
+		if optimization_input_parameters['optimization_name']=='loss1':
+			loss_dict1=ofl.calc_loss_1(extracted_parameters1,output_conditions,loss_weights)
+		elif optimization_input_parameters['optimization_name']=='fom1':
+			loss_dict1=off.calc_fom_1(extracted_parameters1,output_conditions,loss_weights)
+			
+		
+		# Calculating Slope	
+		circuit_parameters_slope[param_name]={}
+		for param in loss_dict:
+			circuit_parameters_slope[param_name][param]=(loss_dict1[param]-loss_dict[param])/increment
+			
+		circuit_parameters_sensitivity[param_name]={}
+		
+		# Calculating Sensitivity
+		for categ_name in optimization_input_parameters['output_parameters_list']:
+			initial_param=extracted_parameters[categ_name]
+			final_param=extracted_parameters1[categ_name]
+			percent_change=(final_param-initial_param)/(initial_param*increment_factor)
+			circuit_parameters_sensitivity[param_name][categ_name]=percent_change
+		
+	return circuit_parameters_slope,circuit_parameters_sensitivity
+
 
 		
 #===========================================================================================================================
@@ -244,7 +402,7 @@ def main_opt_single(circuit_parameters,extracted_parameters,optimization_input_p
 	i=i+offset
 	max_iteration=max_iteration+offset
 	
-	# Running Eldo
+	# Running spectre
 	extracted_parameters=sp.write_extract(circuit_parameters,optimization_input_parameters)
 
 	# Calculating loss
@@ -271,12 +429,17 @@ def main_opt_single(circuit_parameters,extracted_parameters,optimization_input_p
 		
 		
 		# Updating the circuit parameters
-		circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)
+		time_start=datetime.datetime.now()
+		#circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)								 
+		circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope_parallel(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)
+
 		if optimization_input_parameters['optimization_name']=='loss1':
 			circuit_parameters=ofl.update_circuit_parameters(circuit_parameters,circuit_parameters_slope,check_loss,optimization_input_parameters)
 		elif optimization_input_parameters['optimization_name']=='fom1':
 			circuit_parameters=off.update_circuit_parameters(circuit_parameters,circuit_parameters_slope,check_loss,optimization_input_parameters)
 		
+		time_end=datetime.datetime.now()
+		print("\n\nGradient finding time : ",time_end-time_start,'\n\n')
 	
 		# Extracting output parameters for new circuit parameters
 		extracted_parameters=sp.write_extract(circuit_parameters,optimization_input_parameters)
@@ -334,7 +497,8 @@ def main_opt_single(circuit_parameters,extracted_parameters,optimization_input_p
 			break
 	
 	# Calculating slope and sensitivity
-	circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)
+	#circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)
+	circuit_parameters_slope,circuit_parameters_sensitivity=calc_loss_slope_parallel(output_conditions,circuit_parameters,loss_iter[i-1],extracted_parameters,optimization_input_parameters)
 	sensitivity_iter[i-1]=circuit_parameters_sensitivity.copy()
 	
 	# Storing the final results

@@ -1,0 +1,20 @@
+Gd_data2 : 
+
+lf=20e-2
+Ac=400
+Current is bias current
+in_change=1.1
+
+Gd_data3 : 
+
+lf=20e-2
+Ac=400
+Current is mos current
+in_change=1.1
+
+Gd_data4 : 
+
+lf=20e-2
+Ac=600
+Current is bias current
+in_change=1.001

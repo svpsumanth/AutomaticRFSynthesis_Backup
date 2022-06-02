@@ -1,0 +1,72 @@
+# THis file contains all the required Rsheet across corners . so we will manually provide parameters here
+
+rnodl_m :
+	lmin	:	0.4e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rnodwo_m :
+	lmin	:	0.8e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rnpolyl_m :
+	lmin	:	0.4e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rnpolywo_m :
+	lmin	:	0.8e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rnwod_m :
+	lmin	:	9e-6
+	lmax	:	100e-6
+	wmin	:	1.8e-6
+	wmax	:	10e-6
+	node	:	3
+
+rnwsti_m :
+	lmin	:	9e-6
+	lmax	:	100e-6
+	wmin	:	1.8e-6
+	wmax	:	10e-6
+	node	:	3
+
+rpodl_m :
+	lmin	:	0.4e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rpodwo_m :
+	lmin	:	0.8e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rppolyl_m :
+	lmin	:	0.4e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+
+rppolywo_m :
+	lmin	:	0.8e-6
+	lmax	:	100e-6
+	wmin	:	0.4e-6
+	wmax	:	10e-6
+	node	:	3
+

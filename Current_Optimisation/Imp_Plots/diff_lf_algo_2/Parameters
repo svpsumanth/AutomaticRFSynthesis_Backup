@@ -1,0 +1,7 @@
+lf=25e-2
+stop_cond=0.001
+Ac=15/90e-3
+in_change=1.1 (10 percent)
+Limit_on_Input_Change= 5%
+
+Same 10 percent is used to calculate the sensitivities

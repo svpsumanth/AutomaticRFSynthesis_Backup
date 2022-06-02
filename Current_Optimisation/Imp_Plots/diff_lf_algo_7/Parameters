@@ -1,0 +1,9 @@
+lf=30e-2
+stop_cond=0.01
+Ac=400
+in_change=1.1 (10 percent)
+
+Same 10 percent is used to calculate the sensitivities
+Gradient is (original + without Io)
+
+Best_Io=547u

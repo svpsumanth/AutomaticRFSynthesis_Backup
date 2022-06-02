@@ -1,0 +1,16 @@
+In the sheet Resister_Models,
+
+Provided Data,
+
+1. Model Name
+2. Model's Sheet Resistance
+3. Temperature Variation Parameters (ptc1 and ptc2)
+
+	Here ptc1 is Linear Temp Coefficient and ptc is Quadratic Coefficient
+
+	Given ptc,ptc and resistance at 25C (by default),
+
+		Resistance=R_25*(1 + (temp-25)*ptc1 + ptc2*(temp-25)^2 )  \
+	
+	(This is how spectre calculates Resistance vs Temperature)
+4.

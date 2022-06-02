@@ -1,0 +1,6 @@
+gain_dB=10
+s11_dB_max=-15
+iip3_dBm_min=-5
+NF_max_dB=4
+f=1e9       
+Rs=50

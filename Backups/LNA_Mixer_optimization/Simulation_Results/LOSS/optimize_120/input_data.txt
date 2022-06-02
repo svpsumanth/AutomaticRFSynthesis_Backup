@@ -1,0 +1,112 @@
+
+
+---------------------- Output Conditions -----------------------
+iip3_dbm: -10.0
+iip2_dbm: 40.0
+conv_gain_db: 24.0
+nf_db: 6.0
+flo: 1.0G
+frf: 1.01G
+f_lower: 50.0M
+f_upper: 2.0G
+bb_BW: 10.0M
+region: 2.0
+
+---------------------- Simulation Conditions -----------------------
+hb_sweep_time_save: 0
+iip3_errpreset: moderate
+pin_iip3: -65
+f_delta_iip3: 1000000.0
+mismatch: 0.001
+
+---------------------- circuit_parameters_list -----------------------
+Rb, Rd1, Rd2, Rbias1, Rbias2, Rbias3, Rbias4, C1, C2, C3, C4, Cload, len1, len2, W1, W2, W3, Ibias1, Ibias2, frf, flo, Alo, Temp, 
+
+---------------------- output_parameters_list -----------------------
+Io1, Io2, conv_gain_db, lna_gain_db, bb_BW, nf_db, iip3_dbm, gm1, gds1, region1, gm2, gds2, region2, 
+
+---------------------- MOS Parameters -----------------------
+MOS Type :NMOS
+Vdd      :1
+Lmin     :6.000000000000001e-08
+
+---------------------- Manual Circuit Parameters -----------------------
+Rb: 348.416
+Rd1: 253.849
+Rd2: 312.906
+Rbias1: 1.0K
+Rbias2: 10.543K
+Rbias3: 18.822K
+Rbias4: 16.952K
+C1: 39.222p
+C2: 10.938p
+C3: 2.989p
+C4: 2.993p
+Cload: 12.615p
+len1: 60.0n
+len2: 62.983n
+W1: 159.142µ
+W2: 68.915µ
+W3: 37.752µ
+Ibias1: 1.006m
+Ibias2: 1.131m
+frf: 1.01G
+frf_fund2: 1.011G
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Alo: 488.961m
+Temp: 27.0
+
+---------------------- Pre Optimization -----------------------
+Pre_Opt_Type	   :manual
+C1_threshold    :200
+Rbias_threshold :200
+
+---------------------- Loss Weights -----------------------
+conv_gain_db: 125.0m
+iip3_dbm: 100.0m
+iip2_dbm: 25.0m
+nf_db: 166.667m
+bb_BW: 100.0n
+region: 500.0m
+Io: 200.0
+
+---------------------- Alpha Parameters -----------------------
+alpha: 20.0m
+fixed_alpha: 15.0m
+Rb: 1.0
+Rd1: 1.0
+Rd2: 1.0
+Rbias3: 1.0
+Rbias4: 1.0
+Cload: 1.0
+len2: 1.0
+Ibias1: 1.0
+Ibias2: 1.0
+W1: 1.0
+W2: 1.0
+W3: 1.0
+Alo: 1.0
+Alpha Type  :Normal
+Alpha Start :0.8
+Alpha End   :0.1
+
+---------------------- Optimization Parameters -----------------------
+Max Iterations :120
+Alpha Min      :-1
+Consec Iter    :-1
+Alpha Mult      :1
+Delta Threshold :0.01
+Loss Type       :0
+Update Check    :0
+Optimization Name :loss1
+Optimization Type :0
+Optimization Parameters : Rb ,Rd1 ,Rd2 ,Rbias3 ,Rbias4 ,Cload ,len2 ,Ibias1 ,Ibias2 ,W1 ,W2 ,W3 ,Alo ,
+
+------------- Note ------------------
+Loss Type is 1 for normal gradient descent
+Loss Type is 0 for gradient descent with slope of Io is only considered when other losses are 0 and Io slope is ignored otherwise
+
+Update Check is 1 if we want to perform next iteration with the a previous result having the smaller loss
+Update Check is 0 fif we will perform next iteration with present circuit parameters

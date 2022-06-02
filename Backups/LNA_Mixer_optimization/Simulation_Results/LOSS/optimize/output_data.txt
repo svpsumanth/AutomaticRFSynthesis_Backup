@@ -1,0 +1,153 @@
+
+-------------------------------------------------------------------
+Maximum Loss of gain+Io+s11+iip3=0
+Optimized Point occured at iteration=1
+Optimized Io Loss=327.545m
+
+------------------------- Circuit Parameter Values ----------------------------------------
+Rb: 346.734
+Rd1: 259.723
+Rd2: 320.333
+Rbias1: 1.0K
+Rbias2: 10.543K
+Rbias3: 18.71K
+Rbias4: 17.05K
+C1: 39.222p
+C2: 10.938p
+C3: 2.989p
+C4: 2.993p
+Cload: 12.614p
+len1: 60.0n
+len2: 63.776n
+W1: 159.67µ
+W2: 69.498µ
+W3: 37.889µ
+Ibias1: 1.023m
+Ibias2: 1.148m
+frf: 1.01G
+frf_fund2: 1.011G
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Alo: 494.497m
+Temp: 27.0
+
+------------------------- Output Parameter Values ----------------------------------------
+Io1: 961.368µ
+Io2: 676.357µ
+conv_gain_db: 22.006
+lna_gain_db: 11.61
+bb_BW: 11.646M
+nf_db: 7.642
+iip3_dbm: -5.661
+gm1: 19.125m
+gds1: 2.464m
+region1: 3.0
+gm2: 12.369m
+gds2: 1.977m
+region2: 3.0
+
+Time Taken to Run (hh/mm/ss.) = 1:57:36.689257
+
+---------------- MOS Parameters ----------------------------------
+un: 21.206m
+cox: 17.258m
+vt: 318.03m
+Lmin: 60.0n
+vdd: 1.0
+
+--------------------- Manual Hand Calculations ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+Rb: 348.416
+Rd1: 253.849
+Rd2: 312.906
+Rbias1: 1.0K
+Rbias2: 10.543K
+Rbias3: 18.822K
+Rbias4: 16.952K
+C1: 39.222p
+C2: 10.938p
+C3: 2.989p
+C4: 2.993p
+Cload: 12.615p
+len1: 60.0n
+len2: 62.983n
+W1: 159.142µ
+W2: 68.915µ
+W3: 37.752µ
+Ibias1: 1.006m
+Ibias2: 1.131m
+frf: 1.01G
+frf_fund2: 1.011G
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Alo: 488.961m
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+Io1: 950.549µ
+Io2: 660.072µ
+gm1: 18.933m
+gds1: 2.422m
+region1: 3.0
+gm2: 12.102m
+gds2: 1.964m
+region2: 3.0
+Vcmlo: 473.881m
+conv_gain_db: 21.56
+gain_freq: 0
+bb_BW: 11.646M
+lna_gain_db: 11.468
+lna_gain_freq: 1.0G
+nf_db: 7.707
+iip3_dbm: -6.272
+
+--------------------- Optimization Start ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+Rb: 348.416
+Rd1: 253.849
+Rd2: 312.906
+Rbias1: 1.0K
+Rbias2: 10.543K
+Rbias3: 18.822K
+Rbias4: 16.952K
+C1: 39.222p
+C2: 10.938p
+C3: 2.989p
+C4: 2.993p
+Cload: 12.615p
+len1: 60.0n
+len2: 62.983n
+W1: 159.142µ
+W2: 68.915µ
+W3: 37.752µ
+Ibias1: 1.006m
+Ibias2: 1.131m
+frf: 1.01G
+frf_fund2: 1.011G
+flo: 1.0G
+f_lower: 50.0M
+f_upper: 2.0G
+Alo: 488.961m
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+Io1: 950.549µ
+Io2: 660.072µ
+gm1: 18.933m
+gds1: 2.422m
+region1: 3.0
+gm2: 12.102m
+gds2: 1.964m
+region2: 3.0
+Vcmlo: 473.881m
+conv_gain_db: 21.56
+gain_freq: 0
+bb_BW: 11.646M
+lna_gain_db: 11.468
+lna_gain_freq: 1.0G
+nf_db: 7.707
+iip3_dbm: -6.272

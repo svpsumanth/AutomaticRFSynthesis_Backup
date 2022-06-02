@@ -1,0 +1,173 @@
+
+The harmonics are when a sinusoidal current of 1uA is passed
+and also for all the simulations, used wmin and lmin as width and length. 
+
+Resistor Model :  rnodl_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 4e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 14.52359
+Rsheet 		 : 	 15.24567
+ff_mul 		 : 	 0.7
+ss_mul 		 : 	 1.3
+ptc1 		 : 	 0.002026898
+ptc2 		 : 	 -3.42e-06
+Vhar 		 : 	 [-96.7307, -423.1025, -379.9235, -415.1375, -369.2433]
+Vhar_r 		 : 	 [0.0, -326.3718, -283.1928, -318.4067, -272.5126]
+
+
+
+Resistor Model :  rnodwo_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 8e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 238.6279
+Rsheet 		 : 	 104.1410518
+ff_mul 		 : 	 0.82
+ss_mul 		 : 	 1.18
+ptc1 		 : 	 0.00158
+ptc2 		 : 	 4.18e-07
+Vhar 		 : 	 [-72.3399, -376.6522, -355.5463, -374.72, -344.8238]
+Vhar_r 		 : 	 [0.0, -304.3124, -283.2065, -302.3801, -272.4839]
+
+
+
+Resistor Model :  rnpolyl_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 4e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 15.00891
+Rsheet 		 : 	 15.39650316
+ff_mul 		 : 	 0.7
+ss_mul 		 : 	 1.3
+ptc1 		 : 	 0.002092435
+ptc2 		 : 	 -4.21e-06
+Vhar 		 : 	 [-96.4686, -410.8488, -379.9028, -430.7789, -368.9557]
+Vhar_r 		 : 	 [0.0, -314.3802, -283.4342, -334.3103, -272.4871]
+
+
+
+Resistor Model :  rnpolywo_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 8e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 327.0095
+Rsheet 		 : 	 124.4470272
+ff_mul 		 : 	 0.83
+ss_mul 		 : 	 1.18
+ptc1 		 : 	 0.000175
+ptc2 		 : 	 2.52e-07
+Vhar 		 : 	 [-69.4628, -361.511, -349.5665, -361.7033, -342.2973]
+Vhar_r 		 : 	 [0.0, -292.0483, -280.1037, -292.2405, -272.8345]
+
+
+
+Resistor Model :  rnwod_m 
+
+wmin 		 : 	 1.8e-06
+wmax 		 : 	 10e-6
+lmin 		 : 	 9e-6
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 829.1922
+Rsheet 		 : 	 316
+ff_mul 		 : 	 0.8
+ss_mul 		 : 	 1.2
+ptc1 		 : 	 0.00293
+ptc2 		 : 	 9.99e-06
+Vhar 		 : 	 [-81.9947, -405.9763, -365.1748, -425.8805, -354.4987]
+Vhar_r 		 : 	 [0.0, -323.9816, -283.1801, -343.8858, -272.5039]
+
+
+
+Resistor Model :  rnwsti_m 
+
+wmin 		 : 	 1.8e-06
+wmax 		 : 	 10e-6
+lmin 		 : 	 9e-6
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 849.0231
+Rsheet 		 : 	 605
+ff_mul 		 : 	 0.8
+ss_mul 		 : 	 1.2
+ptc1 		 : 	 0.0023
+ptc2 		 : 	 9.34e-06
+Vhar 		 : 	 [-83.1402, -420.5948, -366.3361, -425.3632, -355.6449]
+Vhar_r 		 : 	 [0.0, -337.4546, -283.1959, -342.2231, -272.5047]
+
+
+
+Resistor Model :  rpodl_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 4e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 13.58024
+Rsheet 		 : 	 14.552007
+ff_mul 		 : 	 0.7
+ss_mul 		 : 	 1.3
+ptc1 		 : 	 0.002190805
+ptc2 		 : 	 -2.37e-06
+Vhar 		 : 	 [-97.3341, -420.8503, -380.4985, -421.9761, -369.8393]
+Vhar_r 		 : 	 [0.0, -323.5162, -283.1644, -324.6421, -272.5053]
+
+
+
+Resistor Model :  rpodwo_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 8e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 559.4533
+Rsheet 		 : 	 257.3520919
+ff_mul 		 : 	 0.85
+ss_mul 		 : 	 1.16
+ptc1 		 : 	 0.00133
+ptc2 		 : 	 5.71e-07
+Vhar 		 : 	 [-64.4939, -349.6681, -353.3589, -348.3355, -334.9399]
+Vhar_r 		 : 	 [0.0, -285.1742, -288.865, -283.8416, -270.4461]
+
+
+
+Resistor Model :  rppolyl_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 4e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 14.66262
+Rsheet 		 : 	 14.81890631
+ff_mul 		 : 	 0.7
+ss_mul 		 : 	 1.3
+ptc1 		 : 	 0.00230054
+ptc2 		 : 	 -3.32e-06
+Vhar 		 : 	 [-96.3885, -429.8405, -379.5641, -413.2565, -368.969]
+Vhar_r 		 : 	 [0.0, -333.452, -283.1756, -316.8679, -272.5805]
+
+
+
+Resistor Model :  rppolywo_m 
+
+wmin 		 : 	 4e-07
+wmax 		 : 	 10e-6
+lmin 		 : 	 8e-07
+lmax 		 : 	 100e-6
+Res_dc 		 : 	 1629.116
+Rsheet 		 : 	 756.206475
+ff_mul 		 : 	 0.83
+ss_mul 		 : 	 1.18
+ptc1 		 : 	 -0.000344
+ptc2 		 : 	 7.32e-07
+Vhar 		 : 	 [-56.9543, -333.5805, -333.9387, -342.449, -324.8053]
+Vhar_r 		 : 	 [0.0, -276.6262, -276.9844, -285.4947, -267.851]
+
+

@@ -35,7 +35,8 @@ def complete_optimization(optimization_input_parameters):
 
 	# Writing the include command
 	sp.write_errpreset(optimization_input_parameters)
-
+	p_in=optimization_input_parameters['simulation_conditions']['pin_iip3']
+	sp.write_pin(p_in,optimization_input_parameters)
 	#======================================================== MOSFET PARAMETERS ==================================================================================================
 	
 	print('************************************************************************************************************')

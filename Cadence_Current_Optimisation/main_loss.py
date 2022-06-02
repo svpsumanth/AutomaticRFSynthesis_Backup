@@ -25,20 +25,20 @@ optimization_input_parameters={}
 optimization_input_parameters['filename']={}
 
 #----------------------------------------------------
-optimization_input_parameters['model_type']='pkg'		# Options : 'lib' , 'pkg'
-optimization_input_parameters['model_name']='tsmc065_tt'
+optimization_input_parameters['model_type']='lib'		# Options : 'lib' , 'pkg'
+optimization_input_parameters['model_name']='ibm013'
 optimization_input_parameters['model_process_corners']=['tsmc065_tt','tsmc065_ff','tsmc065_ss']		# This is valid for only package type
-optimization_input_parameters['circuit_type']='non_ideal'	# options : 'ideal' , 'non_ideal'       # if non ideal, then no ideal components
+optimization_input_parameters['circuit_type']='ideal'	# options : 'ideal' , 'non_ideal'       # if non ideal, then no ideal components
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # MOSFET Parameters
 
-#'''
+'''
 optimization_input_parameters['filename']['mos_file']='TSMC065 Package'
 optimization_input_parameters['MOS_Type']='NMOS'
 optimization_input_parameters['Lmin']=60*1e-9
 optimization_input_parameters['Vdd']=1
-#'''
+'''
 
 """
 optimization_input_parameters['filename']['mos_file']='/home/ee18b028/cadence_project/tsmc018.scs'
@@ -47,19 +47,19 @@ optimization_input_parameters['Lmin']=0.18*1e-6
 optimization_input_parameters['Vdd']=1.8
 """
 
-"""
+#"""
 optimization_input_parameters['filename']['mos_file']='/home/ee18b028/cadence_project/ibm013.scs'
 optimization_input_parameters['MOS_Type']='NMOS'
 optimization_input_parameters['Lmin']=0.13*1e-6
 optimization_input_parameters['Vdd']=1.3
-"""
+#"""
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # File Names ( continuation )
 
-#optimization_input_parameters['filename']['directory']='/home/ee18b064/cadence_project/CGA_LNA_autogen/'+optimization_input_parameters['circuit_type']+'/'   ## Single ended CGA location
-optimization_input_parameters['filename']['directory']='/home/ee18b064/cadence_project/CGA_LNA_differential/'+optimization_input_parameters['circuit_type']+'/'   ## Differential ended CGA location
+optimization_input_parameters['filename']['directory']='/home/ee18b064/cadence_project/CGA_LNA_autogen/'+optimization_input_parameters['circuit_type']+'/'   ## Single ended CGA location
+#optimization_input_parameters['filename']['directory']='/home/ee18b064/cadence_project/CGA_LNA_differential/'+optimization_input_parameters['circuit_type']+'/'   ## Differential ended CGA location
 
 
 optimization_input_parameters['iip3_method']='basic_pss' # Options : 'basic_hb', 'basic_pss', 'advanced_hb', 'advanced_pss', 'hb_sweep' , 'hb_manual_sweep' , 'hb_single_pin' , 'hb_single_pin_diff' , 'hb_manual_sweep_diff'
@@ -133,7 +133,7 @@ optimization_input_parameters['pre_optimization']['Step1b_Limit']=5
 optimization_input_parameters['pre_optimization']['Step2_Limit']=5
 optimization_input_parameters['pre_optimization']['vdsat_reqd']=0.09
 
-optimization_input_parameters['pre_optimization']['type']=1				#Available Methods : ['manual' , 1]
+optimization_input_parameters['pre_optimization']['type']='auto'				#Available Methods : ['manual' , 'auto']
 optimization_input_parameters['pre_optimization']['gmrs_threshold']=0.2
 optimization_input_parameters['pre_optimization']['vdsat_threshold']=0.02
 optimization_input_parameters['pre_optimization']['vosw_threshold']=0.1
@@ -211,9 +211,9 @@ file_choose='S' # 'S' to run a single time; 'M' to run multiple times
 if file_choose=='S':
 
 	# ------- Set Any Additional Parameters Here --------
-	filename=f_directory+'wideband_final'						# SET THE FILENAME HERE
-	optimization_input_parameters['max_iteration']=10
-	optimization_input_parameters['iip3_method']='hb_single_pin_diff'
+	filename=f_directory+'codecheck_tsmc180'						# SET THE FILENAME HERE
+	optimization_input_parameters['max_iteration']=1
+	optimization_input_parameters['iip3_method']='hb_single_pin'
 	#tv.temperature_variation(optimization_input_parameters)	
 	# ------- Set Any Additional Parameters Here --------
 	

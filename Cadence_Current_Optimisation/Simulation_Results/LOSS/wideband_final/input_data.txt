@@ -53,7 +53,7 @@ Temp: 27.0
 Step1b_Limit :5
 Step2_Limit  :5
 vdsat_reqd      :0.09
-Pre_Opt_Type	   :1
+Pre_Opt_Type	   :auto
 gmrs_threshold  :0.2
 vdsat_threshold :0.02
 C1_threshold    :100.0

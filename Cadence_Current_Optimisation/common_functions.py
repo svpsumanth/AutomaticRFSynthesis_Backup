@@ -1,7 +1,7 @@
 #===========================================================================================================================
 """
-Name: Pyneni Roopesh
-Roll Number: EE18B028
+Name: Pavan Sumanth
+Roll Number: EE18B064
 
 Common Functions File:
 """
@@ -48,18 +48,17 @@ def num_trunc(x_,pts):
     k = -12
     while abs(x_ * 10.0**k) < 1: 
         k += 3
-    return f"{round(x_*10.0**k,pts)}{units[k]}"
+
+    if k in units:
+        string=f"{round(x_*10.0**k,pts)}{units[k]}"
+    else:
+        string=str(x_)
+    return string
 
 #===========================================================================================================================
 #--------------------------------------- Output Printing Functions ---------------------------------------------------------
 
 trunc_val=3
-
-#-----------------------------------------------------------------------------------------------
-def wait_key():
-	input('\n\nPress Enter to continue')
-	os.system("clear")
-
 
 #-----------------------------------------------------------------------------------------------
 #Assigning MOSFET Parameters
@@ -99,17 +98,6 @@ def print_MOS_parameters(mos_parameters):
 	
 #-----------------------------------------------------------------------------------------------
 # Printing the circuit parameters
-'''def print_circuit_parameters(circuit_parameters):
-	print ('\n____________________________________________________________________')
-	print ('-------------------------Circuit Parameters-------------------------\n')
-	print ('W     = ', num_trunc(circuit_parameters['W'],trunc_val))
-	print ('Rb    = ',num_trunc(circuit_parameters['Rb'],trunc_val))
-	print ('Rd    = ',num_trunc(circuit_parameters['Rd'],trunc_val))
-	print ('Io    = ',num_trunc(circuit_parameters['Io'],trunc_val))
-	print ('C1    = ',num_trunc(circuit_parameters['C1'],trunc_val))
-	print ('C2    = ',num_trunc(circuit_parameters['C2'],trunc_val))
-	print ('Rbias = ', num_trunc(circuit_parameters['Rbias'],trunc_val))
-	print ('Temp  = ', num_trunc(circuit_parameters['Temp'],trunc_val))'''
 def print_circuit_parameters(circuit_parameters):
 	print ('\n____________________________________________________________________')
 	print ('-------------------------Extracted Outputs--------------------------\n')
@@ -133,8 +121,7 @@ def print_extracted_outputs(extracted_parameters):
 	print ('-------------------------Extracted Outputs--------------------------\n')
 	for i in extracted_parameters:
 		print(str(i)+'\t\t\t  =  ',num_trunc(extracted_parameters[i],2))
-	
-	
+		
 #-----------------------------------------------------------------------------------------------
 # Printing the extracted parameters for main optimization
 def print_extracted_outputs_optimization(extracted_parameters):
@@ -142,7 +129,6 @@ def print_extracted_outputs_optimization(extracted_parameters):
 	print ('-------------------------Extracted Outputs--------------------------\n')
 	for i in extracted_parameters:
 		print(str(i)+'\t\t\t  =  ',num_trunc(extracted_parameters[i],2))
-	
 	
 #-----------------------------------------------------------------------------------------------
 # Printing the sensitivity of the parameters
@@ -152,13 +138,7 @@ def print_sensitivity(circuit_parameters_sensitivity):
 	for param_name in circuit_parameters_sensitivity:
 		print('\n----------- ',param_name,' -----------\n')
 		for categ in circuit_parameters_sensitivity[param_name]:
-			print(categ,'\t: ',num_trunc(circuit_parameters_sensitivity[param_name][categ],trunc_val))
-	
-	
-
-
-
-	
+			print(categ,'\t: ',num_trunc(circuit_parameters_sensitivity[param_name][categ],trunc_val))	
 #===========================================================================================================================
 
 

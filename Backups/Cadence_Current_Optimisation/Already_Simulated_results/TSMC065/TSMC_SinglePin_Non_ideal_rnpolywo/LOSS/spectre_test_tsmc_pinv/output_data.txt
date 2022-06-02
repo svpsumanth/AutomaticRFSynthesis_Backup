@@ -1,0 +1,170 @@
+
+-------------------------------------------------------------------
+Maximum Loss of gain+Io+s11+iip3=0
+Optimized Point occured at iteration=89
+Optimized Io Loss=364 m
+
+------------------------- Circuit Parameter Values ----------------------------------------
+fo: 1000000000.0
+Io: 662 u
+W: 359 u
+Rb: 233
+Rd: 288
+Rbias: 1000
+C1: 159 p
+C2: 187 p
+Temp: 27.0
+
+------------------------- Output Parameter Values ----------------------------------------
+Io: 729 u
+gain_db: 12.200000000000001
+iip3_dbm: -3.91
+s11_db: -15.100000000000001
+nf_db: 3.99
+p_source: 1.39 m
+gm1: 15.7 m
+vdsat: 46.2 m
+vg: 498 m
+vd: 731 m
+vs: 219 m
+
+Time Taken to Run (hh/mm/ss.) = 0:49:31.552754
+
+---------------- MOS Parameters ----------------------------------
+un: 21.2 m
+cox: 17.2 m
+vt: 508 m
+Lmin: 60.0 n
+vdd: 1.0
+
+--------------------- Automatic Hand Calculations ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1000000000.0
+Io: 44.1 u
+W: 740 u
+Rb: 11500
+Rd: 316
+Rbias: 1000
+C1: 159 p
+C2: 51.1 p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 981 m
+vg: 836 m
+vs: 634 m
+i_source: 89.6 u
+v_source: 1.0
+p_source: 89.6 u
+Io: 45.3 u
+gm1: 1.09 m
+gds1: 150 u
+vt: 508 m
+vdsat: 42.4 m
+cgd1: 167 f
+cgs1: 149 f
+gain_db: -8.97
+freq: 1000000000.0
+s11_db: -1.18
+nf_db: 16.1
+iip3_dbm: -14.700000000000001
+
+--------------------- Hand Calculations Update ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1000000000.0
+Io: 112 u
+W: 287 u
+Rb: 4210
+Rd: 316
+Rbias: 1000
+C1: 159 p
+C2: 53.0 p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 953 m
+vg: 869 m
+vs: 594 m
+i_source: 228 u
+v_source: 1.0
+p_source: 228 u
+Io: 114 u
+gm1: 2.67 m
+gds1: 369 u
+vt: 502 m
+vdsat: 43.1 m
+cgd1: 77.5 f
+cgs1: 57.2 f
+gain_db: 821 m
+freq: 1000000000.0
+s11_db: -2.7600000000000002
+nf_db: 10.200000000000001
+iip3_dbm: -12.9
+
+--------------------- gm Update ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1000000000.0
+Io: 910 u
+W: 94.4 u
+Rb: 163
+Rd: 316
+Rbias: 1000
+C1: 159 p
+C2: 53.0 p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 625 m
+vg: 566 m
+vs: 201 m
+i_source: 1.84 m
+v_source: 1.0
+p_source: 1.84 m
+Io: 931 u
+gm1: 17.3 m
+gds1: 2.21 m
+vt: 444 m
+vdsat: 56.3 m
+cgd1: 43.3 f
+cgs1: 17.5 f
+gain_db: 13.200000000000001
+freq: 1000000000.0
+s11_db: -18.8
+nf_db: 4.1
+iip3_dbm: 12.9
+
+--------------------- Optimization Start ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1000000000.0
+Io: 910 u
+W: 94.4 u
+Rb: 163
+Rd: 316
+Rbias: 1000
+C1: 159 p
+C2: 53.0 p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 625 m
+vg: 566 m
+vs: 201 m
+i_source: 1.84 m
+v_source: 1.0
+p_source: 1.84 m
+Io: 931 u
+gm1: 17.3 m
+gds1: 2.21 m
+vt: 444 m
+vdsat: 56.3 m
+cgd1: 43.3 f
+cgs1: 17.5 f
+gain_db: 13.200000000000001
+freq: 1000000000.0
+s11_db: -18.8
+nf_db: 4.1
+iip3_dbm: 12.9

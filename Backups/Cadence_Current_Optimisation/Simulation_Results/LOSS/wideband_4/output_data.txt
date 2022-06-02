@@ -1,0 +1,241 @@
+
+-------------------------------------------------------------------
+Maximum Loss of gain+Io+s11+iip3=0
+Optimized Point occured at iteration=15
+Optimized Io Loss=571.511m
+
+------------------------- Circuit Parameter Values ----------------------------------------
+fo: 1.0G
+f_lower: 100.0M
+f_upper: 2.0G
+Io: 1.222m
+W: 98.833µ
+Rb: 222.802
+Rd: 309.274
+Rbias: 1.0K
+C1: 19.868p
+C2: 10.664p
+Temp: 27.0
+
+------------------------- Output Parameter Values ----------------------------------------
+Io: 1.143m
+gain_db: 11.155
+gain_fo: 12.64
+gain_lower: 8.155
+gain_upper: 12.394
+freq_lower: 100.0M
+freq_upper: 2.0G
+iip3_dbm: 10.459
+s11_db: -15.107
+s12_db: -66.756
+s21_db: -86.349
+s22_db: -752.906n
+Kf: 3.91
+nf_db: 3.939
+p_source: 4.729m
+gm1: 20.793m
+vdsat: 61.093m
+vg: 675.573m
+vd: 624.831m
+vs: 275.85m
+
+Time Taken to Run (hh/mm/ss.) = 0:14:43.436146
+
+---------------- MOS Parameters ----------------------------------
+un: 21.206m
+cox: 17.258m
+vt: 465.011m
+Lmin: 60.0n
+vdd: 1.0
+
+--------------------- Automatic Hand Calculations ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1.0G
+f_lower: 100.0M
+f_upper: 2.0G
+Io: 44.27µ
+W: 740.692µ
+Rb: 11.501K
+Rd: 316.228
+Rbias: 1.0K
+C1: 15.915p
+C2: 10.226p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 986.993m
+vg: 602.846m
+vs: 448.075m
+i_source: 166.127µ
+v_source: 1.0
+p_source: 166.127µ
+Io: 38.756µ
+gm1: 939.238µ
+gds1: 110.962µ
+vt: 465.011m
+vdsat: 43.786m
+cgd1: 167.593f
+cgs1: 149.376f
+gain_lower: -8.966
+gain_fo: -11.304
+gain_upper: -14.89
+gain_db: -11.89
+freq: 1.0G
+freq_lower: 100.0M
+freq_upper: 2.0G
+s11_db: -960.892m
+s12_db: -85.867
+s21_db: -105.145
+s22_db: -639.82n
+s11_rad: -326.398m
+s12_rad: -842.739m
+s21_rad: -679.535m
+s22_rad: -3.142
+Kf: 52.275
+nf_db: 18.228
+iip3_dbm: -11.888
+
+--------------------- Hand Calculations Update ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1.0G
+f_lower: 100.0M
+f_upper: 2.0G
+Io: 44.27µ
+W: 740.692µ
+Rb: 11.501K
+Rd: 316.228
+Rbias: 1.0K
+C1: 15.915p
+C2: 10.6p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 986.993m
+vg: 602.846m
+vs: 448.075m
+i_source: 166.127µ
+v_source: 1.0
+p_source: 166.127µ
+Io: 38.756µ
+gm1: 939.238µ
+gds1: 110.962µ
+vt: 465.011m
+vdsat: 43.786m
+cgd1: 167.593f
+cgs1: 149.376f
+gain_lower: -8.966
+gain_fo: -11.304
+gain_upper: -14.89
+gain_db: -11.89
+freq: 1.0G
+freq_lower: 100.0M
+freq_upper: 2.0G
+s11_db: -960.892m
+s12_db: -85.867
+s21_db: -105.145
+s22_db: -639.82n
+s11_rad: -326.398m
+s12_rad: -842.739m
+s21_rad: -679.535m
+s22_rad: -3.142
+Kf: 52.275
+nf_db: 18.228
+iip3_dbm: -11.888
+
+--------------------- gm Update ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1.0G
+f_lower: 100.0M
+f_upper: 2.0G
+Io: 849.726µ
+W: 81.652µ
+Rb: 204.658
+Rd: 316.228
+Rbias: 1.0K
+C1: 15.915p
+C2: 10.6p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 706.398m
+vg: 559.371m
+vs: 195.407m
+i_source: 3.451m
+v_source: 1.0
+p_source: 3.451m
+Io: 875.779µ
+gm1: 16.246m
+gds1: 1.925m
+vt: 432.96m
+vdsat: 58.769m
+cgd1: 39.008f
+cgs1: 15.242f
+gain_lower: 6.416
+gain_fo: 11.802
+gain_upper: 11.513
+gain_db: 9.416
+freq: 1.0G
+freq_lower: 100.0M
+freq_upper: 2.0G
+s11_db: -14.607
+s12_db: -67.299
+s21_db: -87.71
+s22_db: -813.873n
+s11_rad: -1.018
+s12_rad: -156.034m
+s21_rad: -151.339m
+s22_rad: -3.142
+Kf: 5.233
+nf_db: 4.469
+iip3_dbm: 6.826
+
+--------------------- Optimization Start ---------------------------------
+
+---------------- Circuit Parameters ------------------------
+fo: 1.0G
+f_lower: 100.0M
+f_upper: 2.0G
+Io: 849.726µ
+W: 81.652µ
+Rb: 204.658
+Rd: 316.228
+Rbias: 1.0K
+C1: 15.915p
+C2: 10.6p
+Temp: 27.0
+
+---------------- Extracted Parameters ------------------------
+vd: 706.398m
+vg: 559.371m
+vs: 195.407m
+i_source: 3.451m
+v_source: 1.0
+p_source: 3.451m
+Io: 875.779µ
+gm1: 16.246m
+gds1: 1.925m
+vt: 432.96m
+vdsat: 58.769m
+cgd1: 39.008f
+cgs1: 15.242f
+gain_lower: 6.416
+gain_fo: 11.802
+gain_upper: 11.513
+gain_db: 9.416
+freq: 1.0G
+freq_lower: 100.0M
+freq_upper: 2.0G
+s11_db: -14.607
+s12_db: -67.299
+s21_db: -87.71
+s22_db: -813.873n
+s11_rad: -1.018
+s12_rad: -156.034m
+s21_rad: -151.339m
+s22_rad: -3.142
+Kf: 5.233
+nf_db: 4.469
+iip3_dbm: 6.826

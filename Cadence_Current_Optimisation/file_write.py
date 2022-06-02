@@ -372,7 +372,7 @@ def save_output_results(optimization_results,optimization_input_parameters):
 
 def save_output_temp_var(opt_param_temp_var_dict,optimization_input_parameters):
 	
-	filepath=optimization_input_parameters['filename']['working_directory']+'/Simulation_Results/Temp_variation/'+optimization_input_parameters['iip3_method']+'/'
+	filepath=optimization_input_parameters['filename']['output']+'/Temp_variation/'+optimization_input_parameters['iip3_method']+'/'
 	if not os.path.exists(filepath):
 		os.makedirs(filepath)
 
@@ -404,8 +404,8 @@ def save_output_temp_var(opt_param_temp_var_dict,optimization_input_parameters):
 #-------------------------------------------- Temperature and Current Variation Results ----------------------------------------------------
 
 def save_output_temp_var_with_current(Io_list,opt_param_temp_var_dict,optimization_input_parameters):
-	
-	filepath=optimization_input_parameters['filename']['working_directory']+'/Simulation_Results/Temperature_current_variation/'+optimization_input_parameters['iip3_method']+'/'
+
+	filepath=optimization_input_parameters['filename']['output']+'/Temp_current_variation/'+optimization_input_parameters['iip3_method']+'/'
 	if not os.path.exists(filepath):
 		os.makedirs(filepath)
 
@@ -443,7 +443,7 @@ def save_output_temp_var_with_current(Io_list,opt_param_temp_var_dict,optimizati
 
 def save_output_temp_process_var(opt_param_temp_var_dict,optimization_input_parameters):
 	
-	filepath=optimization_input_parameters['filename']['working_directory']+'/Simulation_Results/Temp_Process_variation/'+optimization_input_parameters['iip3_method']+'/'
+	filepath=optimization_input_parameters['filename']['output']+'/Temp_Process_variation/'+optimization_input_parameters['iip3_method']+'/'
 	if not os.path.exists(filepath):
 		os.makedirs(filepath)
 
@@ -473,7 +473,6 @@ def save_output_temp_process_var(opt_param_temp_var_dict,optimization_input_para
 		for param_name in extracted_parameters:
 			row.append(extracted_parameters[param_name])
 		writer.writerow(row)
-
 	f.close()
 	dp.plot_temp_process_var_plots(filename,filepath,optimization_input_parameters)
 

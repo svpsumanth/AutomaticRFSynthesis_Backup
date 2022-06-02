@@ -472,7 +472,7 @@ def update_initial_parameters_lna(circuit_parameters,mos_parameters,extracted_pa
 
 	circuit_parameters['C2']=C2
 	circuit_parameters['Rbias1']= Rbias
-	#mos_parameters['vt']=extracted_parameters['vt']
+	mos_parameters['vt']=extracted_parameters['vth1']
 	
 		
 	'''DC_status=Sat_Vol_check(circuit_parameters,mos_parameters,optimization_input_parameters)

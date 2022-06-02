@@ -1,0 +1,179 @@
+// LNA Circuit 1 - HB SWEEP
+// IIP3 done using HB ( 2 frequencies in port ) with sweeping pin
+
+simulator lang=spectre
+include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_bip
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_mim
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_dnw
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_18
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_bip_npn
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfrtmom
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_mos_cap_25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_18
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_disres
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_res
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_na
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmos_33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_hvt
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmvar
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmos_18
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_na
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_na33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_lvt
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfres_sa
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_na33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_esd
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmim
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_25od33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_25od33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_mos_cap
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_25ud18
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmos
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_25ud18
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_na25od33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfjvar
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmos_25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rtmom
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_na25od33
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_dio_na25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfres_rpo
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_hvt
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfind
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_rfmvar_25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_na25
+ include "/cad/library/TSMC/65/gp/oa_pdk/models/spectre/crn65gplus_2d5_lk_v1d0.scs" section=ss_lvt
+
+// ------------------------ SETTING PARAMETER VALUES ------------------------------------
+
+// ----- Resistors -----
+parameters Resb=348.3398921089134
+parameters Resd=251.1353923998488
+parameters Resbias=1000
+
+// ----- Capacitors -----
+parameters cap1=3.92222900057188e-11
+parameters cap2=1.0947531319144916e-11
+parameters cload=50e-15
+parameters len_mult_gate_cap=100
+
+// ----- MOSFETs -----
+parameters len=6.000000000000001e-08
+parameters wid=0.00015905107827050754
+parameters w_fin=2e-6
+parameters l_fin=60e-9
+
+// ----- Sources -----
+parameters cur0=0.0009924647216396113
+parameters v_dd=1
+parameters fund_1=1000000000.0
+parameters fund_2=1001000000.0
+parameters f_lower=50000000
+parameters f_upper=2000000000
+parameters pin=-65
+
+// ----- Analysis -----
+parameters n_harm=15
+parameters pin_start=-70
+parameters pin_stop=-40
+parameters n_pin=60
+parameters cir_temp=120.0
+
+//------- Sheet Resistance ---------
+parameters Rsheet=r_rnpolywo
+parameters r_wid=4e-07
+parameters r_len=10e-6
+parameters dw=0.0691e-6
+
+//------- Mos Capacitors -----------
+parameters c_wid=100e-6
+parameters c_len=2e-6
+parameters c_mim_a=-0.029e-6
+parameters c_mim_b=1.03
+parameters c_mim_c=0.207
+parameters c_fin_max=10e-12
+
+// ------------------------ NETLIST STATEMENTS ------------------------------------
+
+// ----- Resistors -----
+resistRb1p (S1p 0 0) rnpolywo_m lr=Resb*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRbiasp (G1p G0p 0) rnpolywo_m lr=Resbias*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRb0p (S0p 0 0) rnpolywo_m lr=Resb*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRdp (Voutp Vdd 0) rnpolywo_m lr=Resd*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+
+resistRb1n (S1n 0 0) rnpolywo_m lr=Resb*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRbiasn (G1n G0n 0) rnpolywo_m lr=Resbias*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRb0n (S0n 0 0) rnpolywo_m lr=Resb*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+resistRdn (Voutn Vdd 0) rnpolywo_m lr=Resd*(r_wid-dw)/Rsheet wr=r_wid m=1 mf=(1) mismatchflag=0
+
+out_port (Voutp Voutn) port dc=0 r=1e10 x=1e-6 num=2
+//out_port (Voutp Voutn) port dc=0 r=1e10 x=-1591.549*1e-9 num=2
+
+
+// ----- Capacitors -----
+capacitance1p (Vinp S1p 0)  mimcap_sin_3t lt=(cap1/(ceil(cap1/c_fin_max))*1e15-2*(c_wid+c_mim_a)*c_mim_c*1e6)/((c_wid+c_mim_a)*c_mim_b*1e12+2*c_mim_c*1e6)-c_mim_a wt=c_wid lay=9 mf=ceil(cap1/c_fin_max) mimflag=1
+
+capacitance1n (Vinn S1n 0)  mimcap_sin_3t lt=(cap1/(ceil(cap1/c_fin_max))*1e15-2*(c_wid+c_mim_a)*c_mim_c*1e6)/((c_wid+c_mim_a)*c_mim_b*1e12+2*c_mim_c*1e6)-c_mim_a wt=c_wid lay=9 mf=ceil(cap1/c_fin_max) mimflag=1
+
+capacitance3 (Voutp Voutn) capacitor c=cload
+
+
+// ----- MOSFETs -----
+M1p (Voutp G1p S1p 0) nch w=wid l=l_fin nf=ceil(wid/w_fin)
+M0p (G0p G0p S0p 0) nch w=wid l=l_fin nf=ceil(wid/w_fin)
+M_gate_cap_p (0 G1p 0 0) nch w=(25*cap2*2.5e-6/(len_mult_gate_cap*60e-15)) l=len_mult_gate_cap*60e-9 nf=ceil(25*cap2/(len_mult_gate_cap*60e-15))
+
+M1n (Voutn G1n S1n 0) nch w=wid l=l_fin nf=ceil(wid/w_fin)
+M0n (G0n G0n S0n 0) nch w=wid l=l_fin nf=ceil(wid/w_fin)
+M_gate_cap_n (0 G1n 0 0) nch w=(25*cap2*2.5e-6/(len_mult_gate_cap*60e-15)) l=len_mult_gate_cap*60e-9 nf=ceil(25*cap2/(len_mult_gate_cap*60e-15))
+
+
+// ----- Sources -----
+Balun (Vsp Vsn Vinp Vinn) transformer n1=100 n2=141.421356
+Vs (Vsp Vsn) port type=sine dbm=pin freq=fund_1 fundname=fund1 dbm2=pin freq2=fund_2 fundname2=fund2 mag=1 r=50 num=1
+
+//Vs1 (Vinp 0) port type=sine dbm=pin freq=fund_1 fundname=fund1 dbm2=pin freq2=fund_2 fundname2=fund2 mag=1 r=50 num=1
+//Vs2 (0 Vinn) port type=sine dbm=pin freq=fund_1 fundname=fund1 dbm2=pin freq2=fund_2 fundname2=fund2 mag=1 r=50 x=1e-6 num=2
+I0p (Vdd G0p) isource dc=cur0
+I0n (Vdd G0n) isource dc=cur0
+Vpower (Vdd 0) vsource dc=v_dd
+
+Settings options rawfmt=psfascii temp=cir_temp
+
+
+// ------------------------ ANALYSIS STATEMENTS ------------------------------------
+
+dc_test dc oppoint="logfile"
+//ac_test ac start=fund_1 stop=fund_1*2 dec=1
+//ac_test ac start=f_lower/1e3 stop=fund_1*10 dec=1
+ac_test ac values=[f_lower fund_1 f_upper]
+//ac_2fo ac start=fund_1*2 stop=fund_1*4 dec=1
+sp_test sp start=fund_1 stop=fund_1*2 dec=1 donoise=yes oprobe=out_port iprobe=Vs file="sp.out" datatype="dbphase"
+noise_test Voutp Voutn noise start=fund_1 stop=fund_1+10*1e7 dec=100 iprobe=Vs
+hb_test hb fundfreqs=[fund_1  fund_2] maxharms=[n_harm  n_harm] errpreset=conservative save=all
+
+
+parameters Rb_wid=r_wid
+parameters Rb_len=Resb*(r_wid-dw)/Rsheet
+parameters Rd_wid=r_wid
+parameters Rd_len=Resd*(r_wid-dw)/Rsheet
+parameters Rbias_wid=r_wid
+parameters Rbias_len=Resbias*(r_wid-dw)/Rsheet
+parameters Cap_len=(cap1/(ceil(cap1/c_fin_max))*1e15-2*(c_wid+c_mim_a)*c_mim_c*1e6)/((c_wid+c_mim_a)*c_mim_b*1e12+2*c_mim_c*1e6)-c_mim_a
+parameters Cap_wid=c_wid
+parameters Cap_mf=ceil(cap1/c_fin_max)
+parameters M_gate_cap_wid=(25*cap2*2.5e-6/(len_mult_gate_cap*60e-15))
+parameters M_gate_cap_len=len_mult_gate_cap*60e-9
+parameters M_gate_cap_nf=ceil(25*cap2/(len_mult_gate_cap*60e-15))
+
+// ------------------------ PRINT STATEMENTS ------------------------------------
+print Rb_wid,Rb_len,Rd_wid,Rd_len,Rbias_wid,Rbias_len,Cap_len,Cap_wid,Cap_mf,M_gate_cap_wid,M_gate_cap_len,M_gate_cap_nf, name=dc_test to="wid_len.out"
+print V(Voutp), V(G1p), V(S1p), I(Vpower), V(Vdd), M1p:ids, M1p:gm, M1p:gds, M1p:vth, M1p:vdsat, M1p:cgs, M1p:cgd, name=dc_test to="dc.out"
+print mag(V(Voutp,Voutn)), mag(V(Vinp,Vinn)),mag(V(Voutp,Voutn))/mag(V(Vinp,Vinn)), 20*log10(mag(V(Voutp,Voutn))/mag(V(Vinp,Vinn))), name=ac_test to="ac.out"
+print mag(V(Voutp,Voutn)), mag(V(Vinp,Vinn)),mag(V(Voutp,Voutn))/mag(V(Vinp,Vinn)), 20*log10(mag(V(Voutp,Voutn))/mag(V(Vinp,Vinn))), name=ac_2fo to="ac_2fo.out"
+print noise_test:NF, name=noise_test to="noise.out"

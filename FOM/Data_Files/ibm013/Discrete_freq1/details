@@ -1,0 +1,16 @@
+
+
+All lf =1 
+lf=0.08
+inchange=1.1
+
+
+hand_out_dict['Io']=1.16e-3
+hand_out_dict['W']=122e-6
+hand_out_dict['Rb']=751
+hand_out_dict['Rd']=316
+hand_out_dict['fo']=1e9
+
+ceil=0.75
+
+

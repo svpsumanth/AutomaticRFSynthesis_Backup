@@ -1,0 +1,4 @@
+Changes made :
+1) cir,chi file name change in RFIC.py
+2) Data file name change
+3) tcsh file change in Run Eldo(in RFIC_write.py)

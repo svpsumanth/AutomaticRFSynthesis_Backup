@@ -1,0 +1,17 @@
+
+
+All lf =1 
+lf=0.1
+inchange=1.1
+
+
+gain_dB=0.1
+s11_dB_max=-15
+iip3_dBm_min=-2
+NF_max_dB=4
+f=1e9       
+Rs=50
+
+ceil=0.75
+
+

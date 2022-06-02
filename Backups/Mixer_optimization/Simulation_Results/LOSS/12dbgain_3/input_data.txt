@@ -1,0 +1,93 @@
+
+
+---------------------- Output Conditions -----------------------
+iip3_dbm: -10.0
+iip2_dbm: 40.0
+conv_gain_db: 12.0
+nf_db: 15.0
+flo: 1.0G
+frf: 1.01G
+bb_BW: 1.0M
+region: 2.0
+
+---------------------- Simulation Conditions -----------------------
+hb_sweep_time_save: 0
+iip3_errpreset: moderate
+pin_iip3: -65
+f_delta_iip3: 1000000.0
+mismatch: 0.001
+
+---------------------- circuit_parameters_list -----------------------
+Rd, Ibias, C1, C2, Cload, W1, W2, Rbias1, Rbias2, Rbias3, flo, mismatch, frf, Alo, Temp, 
+
+---------------------- output_parameters_list -----------------------
+Io, conv_gain_db, iip3_dbm, iip2_dbm, nf_db, p_src, gm1, vdsat1, vg1, vd1, bb_BW, gm2, gds1, region, 
+
+---------------------- MOS Parameters -----------------------
+MOS Type :NMOS
+Vdd      :1
+Lmin     :6.000000000000001e-08
+
+---------------------- Manual Circuit Parameters -----------------------
+Rd: 228.205
+Ibias: 4.147m
+C1: 8.924p
+C2: 9.072p
+Cload: 69.756p
+W1: 899.382µ
+W2: 316.174µ
+Rbias1: 3.532K
+Rbias2: 1.522K
+Rbias3: 861.832
+mismatch: 0
+flo: 1.0G
+frf: 1.01G
+Alo: 291.666m
+Temp: 27.0
+
+---------------------- Pre Optimization -----------------------
+Pre_Opt_Type	   :1
+C1_threshold    :200
+Rbias_threshold :200
+
+---------------------- Loss Weights -----------------------
+conv_gain_db: 83.333m
+iip3_dbm: 100.0m
+iip2_dbm: 25.0m
+nf_db: 66.667m
+bb_BW: 1.0µ
+region: 500.0m
+Io: 100.0
+
+---------------------- Alpha Parameters -----------------------
+alpha: 100.0m
+fixed_alpha: 50.0m
+Rd: 1.0
+W2: 1.0
+W1: 1.0
+Ibias: 1.0
+Alo: 1.0
+Rbias2: 1.0
+Rbias3: 1.0
+Alpha Type  :Normal
+Alpha Start :0.8
+Alpha End   :0.1
+
+---------------------- Optimization Parameters -----------------------
+Max Iterations :300
+Alpha Min      :-1
+Consec Iter    :-1
+Alpha Mult      :1
+Delta Threshold :0.01
+Loss Type       :0
+Update Check    :0
+Optimization Name :loss1
+Optimization Type :1
+Optimization Parameters : Rd ,Ibias ,W1 ,W2 ,Alo ,Rbias2 ,Rbias3 ,
+
+------------- Note ------------------
+Loss Type is 1 for normal gradient descent
+Loss Type is 0 for gradient descent with slope of Io is only considered when other losses are 0 and Io slope is ignored otherwise
+
+Update Check is 1 if we want to perform next iteration with the a previous result having the smaller loss
+Update Check is 0 fif we will perform next iteration with present circuit parameters

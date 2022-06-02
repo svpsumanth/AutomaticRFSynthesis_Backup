@@ -1,0 +1,6 @@
+lf=40e-2
+stop_cond=0.1
+Ac=15/90e-3
+in_change=1.1 (10 percent)
+
+Same 10 percent is used to calculate the sensitivities

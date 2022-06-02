@@ -1,0 +1,8 @@
+# THis file contains all the required mos parameters to the code so we will manually provide parameters here
+
+vt : 0.31803
+un : 0.02120608
+tox : 2e-9
+vdd : 1
+lmin : 60e-9
+

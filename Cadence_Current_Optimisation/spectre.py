@@ -154,9 +154,13 @@ def extract_lib_param(lines,param_name,mos_type):
 # Inputs: Optimization_input_parameters
 # Output: Dictionary with all the parameters
 
-def extract_dc_param(optimization_input_parameters):
+def extract_dc_param(optimization_input_parameters,file_dir=''):
 
-	file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/dc.out'
+	if file_dir=='':
+		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/dc.out'
+	else:
+		file_name=file_dir+'/dc.out'
+
 	lines=extract_file(file_name)
 	extracted_parameters={}
 
@@ -206,9 +210,13 @@ def extract_ac_param_single(optimization_input_parameters):
 # Inputs: Optimization_input_parameters
 # Output: Dictionary with all the parameters
 
-def extract_ac_param(optimization_input_parameters):
+def extract_ac_param(optimization_input_parameters,file_dir=''):
 
-	file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/ac.out'
+	if file_dir=='':
+		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/ac.out'
+	else:
+		file_name=file_dir+'/ac.out'
+
 	lines=extract_file(file_name)
 	extracted_parameters={}
 
@@ -247,9 +255,13 @@ def extract_ac_param(optimization_input_parameters):
 # Inputs: Optimization_input_parameters
 # Output: Dictionary with all the parameters
 
-def extract_sp_param(optimization_input_parameters):
+def extract_sp_param(optimization_input_parameters,file_dir=''):
 
-	file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/sp.out'
+	if file_dir=='':
+		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/sp.out'
+	else:
+		file_name=file_dir+'/sp.out'
+
 	lines=extract_file(file_name)
 	extracted_parameters={}
 	
@@ -269,8 +281,8 @@ def extract_sp_param(optimization_input_parameters):
 	
 	D=cmath.rect(10**(s11_db/20),s11_rad)*cmath.rect(10**(s22_db/20),s22_rad)-cmath.rect(10**(s12_db/20),s12_rad)*cmath.rect(10**(s21_db/20),s21_rad)
 	
-	Kf=(1-10**(s11_db/10)-10**(s22_db/10)+abs(D)**2)/(2*10**(s12_db/20)*10**(s21_db/20))
-	#Kf=0
+	#Kf=(1-10**(s11_db/10)-10**(s22_db/10)+abs(D)**2)/(2*10**(s12_db/20)*10**(s21_db/20))
+	Kf=1
 	
 	extracted_parameters['s11_db']=valueE_to_value(line1[1].split(',')[0])
 	extracted_parameters['s12_db']=valueE_to_value(line1[3].split(',')[0])
@@ -290,9 +302,14 @@ def extract_sp_param(optimization_input_parameters):
 # Inputs: Optimization_input_parameters
 # Output: Dictionary with all the parameters
 
-def extract_noise_param(optimization_input_parameters):
+def extract_noise_param(optimization_input_parameters,file_dir=''):
 
-	file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/noise.out'
+	if file_dir=='':
+		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/noise.out'
+	else:
+		file_name=file_dir+'/noise.out'
+
+
 	lines=extract_file(file_name)
 	extracted_parameters={}
 
@@ -370,7 +387,7 @@ def extract_integ_noise_param(optimization_input_parameters):
 # Inputs: Optimization_input_parameters
 # Output: Dictionary with all the parameters
 
-def extract_iip3_param(optimization_input_parameters):
+def extract_iip3_param(optimization_input_parameters,file_dir=''):
 
 	if optimization_input_parameters['iip3_method']=='basic_hb':
 		file_name_1=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hbac_test.0.pac_hbac'
@@ -385,20 +402,34 @@ def extract_iip3_param(optimization_input_parameters):
 		extracted_parameters=extract_iip3_basic(file_name_1,file_name_2,pin)
 
 	elif optimization_input_parameters['iip3_method']=='hb_manual_sweep':
-		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
-		extracted_parameters=extract_iip3_manual_sweep(file_name,optimization_input_parameters)
+		if file_dir=='':
+			file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
+		else: 
+			file_name=file_dir+'/circ.raw/hb_test.fd.qpss_hb'
+		extracted_parameters=extract_iip3_manual_sweep(file_name,optimization_input_parameters,file_dir)
 	
 	elif optimization_input_parameters['iip3_method']=='hb_single_pin':
-		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
-		extracted_parameters=extract_iip3_hb_single_pin(file_name,optimization_input_parameters)
+		if file_dir=='':
+			file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
+		else: 
+			file_name=file_dir+'/circ.raw/hb_test.fd.qpss_hb'
+		extracted_parameters=extract_iip3_hb_single_pin(file_name,optimization_input_parameters,file_dir)
+
 
 	elif optimization_input_parameters['iip3_method']=='hb_single_pin_diff':
-		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
-		extracted_parameters=extract_iip3_hb_single_pin_diff(file_name,optimization_input_parameters)
+		if file_dir=='':
+			file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
+		else: 
+			file_name=file_dir+'/circ.raw/hb_test.fd.qpss_hb'
+		extracted_parameters=extract_iip3_hb_single_pin_diff(file_name,optimization_input_parameters,file_dir)
+
 
 	elif optimization_input_parameters['iip3_method']=='hb_manual_sweep_diff':
-		file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
-		extracted_parameters=extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters)
+		if file_dir=='':
+			file_name=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.raw/hb_test.fd.qpss_hb'
+		else: 
+			file_name=file_dir+'/circ.raw/hb_test.fd.qpss_hb'
+		extracted_parameters=extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters,file_dir)
 	
 	else:
 		extracted_parameters=extract_iip3_advanced_sweep(optimization_input_parameters)
@@ -792,7 +823,7 @@ def extract_iip3_advanced_sweep(optimization_input_parameters):
 
 #---------------------------------------------------------------------------------------------------------------------------
 # This function sweeps pin manually from python and extracts iip3
-def extract_iip3_manual_sweep(file_name,optimization_input_parameters):
+def extract_iip3_manual_sweep(file_name,optimization_input_parameters,file_dir):
 
 	pin_start=-70
 	pin_stop=-40
@@ -804,7 +835,7 @@ def extract_iip3_manual_sweep(file_name,optimization_input_parameters):
 	vout_im3=np.zeros(n_points,dtype=float)
 		
 	for i in range(n_points):
-		write_pin(p_in[i],optimization_input_parameters)
+		write_pin(p_in[i],optimization_input_parameters,file_dir)
 		run_file(optimization_input_parameters)
 		vout_fund[i],vout_im3[i]=extract_magnitude_multiple(file_name,optimization_input_parameters)
 
@@ -856,7 +887,7 @@ def extract_iip3_manual_sweep(file_name,optimization_input_parameters):
 
 
 # This function sweeps pin manually from python and extracts iip3 for differential case
-def extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters):
+def extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters,file_dir):
 
 	pin_start=-70
 	pin_stop=-40
@@ -873,7 +904,7 @@ def extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters):
 
 		
 	for i in range(n_points):
-		write_pin(p_in[i],optimization_input_parameters)
+		write_pin(p_in[i],optimization_input_parameters,file_dir)
 		run_file(optimization_input_parameters)
 
 		voutp_fund=extract_hb_magnitude(file_name,fund_1,node="Voutp")
@@ -933,14 +964,14 @@ def extract_iip3_manual_sweep_diff(file_name,optimization_input_parameters):
 	return extracted_parameters
 #---------------------------------------------------------------------------------------------------------------------------
 # This Function finds IIP3 by only using single Pin
-def extract_iip3_hb_single_pin(file_name,optimization_input_parameters):
+def extract_iip3_hb_single_pin(file_name,optimization_input_parameters,file_dir):
 	
 
 	p_in=optimization_input_parameters['simulation_conditions']['pin_iip3']
 	vout_fund=1
 	vout_im3=1
 
-	write_pin(p_in,optimization_input_parameters)
+	write_pin(p_in,optimization_input_parameters,file_dir)
 	run_file(optimization_input_parameters)
 	vout_fund,vout_im3=extract_magnitude_multiple(file_name,optimization_input_parameters)
 
@@ -954,7 +985,7 @@ def extract_iip3_hb_single_pin(file_name,optimization_input_parameters):
 	
 
 # This Function finds IIP3 by only using single Pin
-def extract_iip3_hb_single_pin_diff(file_name,optimization_input_parameters):
+def extract_iip3_hb_single_pin_diff(file_name,optimization_input_parameters,file_dir):
 	
 	p_in=optimization_input_parameters['simulation_conditions']['pin_iip3']
 
@@ -962,8 +993,8 @@ def extract_iip3_hb_single_pin_diff(file_name,optimization_input_parameters):
 	fund_2=fund_1+optimization_input_parameters['simulation_conditions']['f_delta_iip3']
 	f_im3=2*fund_2-fund_1
 
-	write_pin(p_in,optimization_input_parameters)
-	run_file(optimization_input_parameters)
+	#write_pin(p_in,optimization_input_parameters,file_dir)
+	#run_file(optimization_input_parameters)
 
 	voutp_fund=extract_hb_magnitude(file_name,fund_1,node="Voutp")
 	voutp_im3=extract_hb_magnitude(file_name,f_im3,node="Voutp")
@@ -1072,13 +1103,14 @@ def extract_mosfet_param_pkg(optimization_input_parameters,mos_dict):
 # Inputs: optimization_input parameters
 # Outputs: output parameters dictionary 
 
-def extract_output_param(optimization_input_parameters):
+def extract_output_param(optimization_input_parameters,file_dir=''):
 	
-	extracted_parameters_dc=extract_dc_param(optimization_input_parameters)
-	extracted_parameters_ac=extract_ac_param(optimization_input_parameters)
-	extracted_parameters_sp=extract_sp_param(optimization_input_parameters)
-	extracted_parameters_noise=extract_noise_param(optimization_input_parameters)
-	extracted_parameters_iip3=extract_iip3_param(optimization_input_parameters)
+	extracted_parameters_dc=extract_dc_param(optimization_input_parameters,file_dir)
+	extracted_parameters_ac=extract_ac_param(optimization_input_parameters,file_dir)
+	extracted_parameters_sp=extract_sp_param(optimization_input_parameters,file_dir)
+	extracted_parameters_noise=extract_noise_param(optimization_input_parameters,file_dir)
+	
+	extracted_parameters_iip3=extract_iip3_param(optimization_input_parameters,file_dir)
 
 	extracted_parameters={}
 	
@@ -1216,10 +1248,13 @@ def write_temp(temperature,optimization_input_parameters):
 
 #-----------------------------------------------------------------
 # Function that modifies pin of 2 tones in .scs file
-def write_pin(pin,optimization_input_parameters):
+def write_pin(pin,optimization_input_parameters,file_dir=''):
 	
-	filename=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.scs'
-	
+	if file_dir=='':
+		filename=optimization_input_parameters['filename']['directory']+optimization_input_parameters['iip3_method']+'/circ.scs'
+	else:
+		filename=file_dir+'/circ.scs'
+
 	f=open(filename,'r+')
 	s=''
 
@@ -1266,7 +1301,7 @@ def write_cir_initial(optimization_input_parameters):
 			if "parameters "+param_name+'=' in line:
 				line=line.replace(line,print_param(param_name,write_dict[param_name]))
 		s=s+line
-
+	
 	f.truncate(0)
 	f.write(s)
 	f.close()
@@ -1303,20 +1338,31 @@ def write_tcsh_initial(optimization_input_parameters):
 def run_file(optimization_input_parameters):
 	os.system('cd /home/ee18b064/cadence_project')
 	os.system(optimization_input_parameters['filename']['spectre_run'])
-	
+
+
 #-----------------------------------------------------------------------------------------------
 # This function will write the circuit parameters, run Eldo and extract the output parameters
 
 def write_extract(circuit_parameters,optimization_input_parameters):
-	
+
 	# Writing to netlist file
+	time_start=datetime.datetime.now()
 	write_param(circuit_parameters,optimization_input_parameters)
+	time_end=datetime.datetime.now()
+	print("Write_Param time : ",time_end-time_start)
 
 	# Running netlist file
+	time_start=datetime.datetime.now()
 	run_file(optimization_input_parameters)
+	time_end=datetime.datetime.now()
+	print("Run_time : ",time_end-time_start)
 	
 	# Extracting Parameters from .chi File
+	time_start=datetime.datetime.now()
 	extracted_parameters=extract_output_param(optimization_input_parameters)
+	time_end=datetime.datetime.now()
+	print("extraction_time : ",time_end-time_start)
+	
 	
 	return extracted_parameters
 
